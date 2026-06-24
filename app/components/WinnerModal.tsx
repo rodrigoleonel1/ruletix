@@ -33,7 +33,7 @@ export default function WinnerModal({ winner, onClose }: WinnerModalProps) {
         {/* Color strip */}
         <div className="px-8 py-8 text-center" style={{ background: winner.color }}>
           <p
-            className="font-bold text-3xl leading-tight break-words"
+            className="font-bold text-3xl leading-tight wrap-break-word"
             style={{ color: textColor }}
           >
             {winner.text}
@@ -47,7 +47,7 @@ export default function WinnerModal({ winner, onClose }: WinnerModalProps) {
           </p>
           <button
             onClick={onClose}
-            className="w-full py-2.5 rounded-lg text-sm font-semibold transition-colors"
+            className="w-full py-2.5 rounded-lg text-sm font-semibold transition-colors cursor-pointer"
             style={{ background: "var(--btn-primary)", color: "var(--btn-text)" }}
           >
             Cerrar

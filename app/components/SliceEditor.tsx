@@ -125,7 +125,7 @@ export default function SliceEditor({ slices, onUpdate }: SliceEditorProps) {
             <div className="relative shrink-0">
               <button
                 onClick={() => setShowColorPicker(showColorPicker === slice.id ? null : slice.id)}
-                className="w-7 h-7 rounded-md border transition-opacity hover:opacity-80"
+                className="w-7 h-7 rounded-md border transition-opacity hover:opacity-80 cursor-pointer"
                 style={{
                   background: slice.color,
                   borderColor: "rgba(0,0,0,0.12)",
@@ -176,7 +176,7 @@ export default function SliceEditor({ slices, onUpdate }: SliceEditorProps) {
             {/* Remove */}
             <button
               onClick={() => removeSlice(slice.id)}
-              className="shrink-0 w-6 h-6 flex items-center justify-center rounded transition-colors opacity-0 group-hover:opacity-100"
+              className="shrink-0 w-6 h-6 flex items-center justify-center rounded transition-colors cursor-pointer"
               style={{ color: "var(--text-muted)" }}
               onMouseEnter={(e) => (e.currentTarget.style.color = "#ef4444")}
               onMouseLeave={(e) => (e.currentTarget.style.color = "var(--text-muted)")}
@@ -195,7 +195,7 @@ export default function SliceEditor({ slices, onUpdate }: SliceEditorProps) {
         <button
           onClick={addSlice}
           disabled={slices.length >= 20}
-          className="w-full flex items-center justify-center gap-2 py-2.5 rounded-lg text-sm font-medium transition-colors"
+          className="w-full flex items-center justify-center gap-2 py-2.5 rounded-lg text-sm font-medium transition-colors cursor-pointer"
           style={{
             background: slices.length >= 20 ? "var(--btn-dis)" : "var(--btn-primary)",
             color: slices.length >= 20 ? "var(--btn-dis-txt)" : "var(--btn-text)",

@@ -215,7 +215,7 @@ export default function Home() {
         >
           <span className="font-semibold text-sm" style={{ color: "var(--text)" }}>Casillas</span>
           <button
-            className="lg:hidden transition-colors"
+            className="lg:hidden transition-colors cursor-pointer"
             style={{ color: "var(--text-muted)" }}
             onClick={() => setSidebarOpen(false)}
           >
@@ -237,7 +237,7 @@ export default function Home() {
         <div className="absolute top-4 left-4 right-4 flex items-center justify-between">
           {/* Mobile: open sidebar */}
           <button
-            className="lg:hidden flex items-center gap-2 text-sm font-medium px-3 py-2 rounded-lg transition-colors"
+            className="lg:hidden flex items-center gap-2 text-sm font-medium px-3 py-2 rounded-lg transition-colors cursor-pointer"
             style={{ background: "var(--sidebar)", border: "1px solid var(--border)", color: "var(--text)" }}
             onClick={() => setSidebarOpen(true)}
           >
@@ -251,7 +251,7 @@ export default function Home() {
           {/* Dark mode toggle */}
           <button
             onClick={toggleDark}
-            className="flex items-center justify-center w-9 h-9 rounded-lg transition-colors"
+            className="flex items-center justify-center w-9 h-9 rounded-lg transition-colors cursor-pointer"
             style={{ background: "var(--sidebar)", border: "1px solid var(--border)", color: "var(--text-muted)" }}
             title={dark ? "Modo claro" : "Modo oscuro"}
           >
@@ -277,7 +277,7 @@ export default function Home() {
         <button
           onClick={() => spin()}
           disabled={disabled}
-          className="mt-7 px-10 py-2.5 rounded-lg text-sm font-semibold transition-colors"
+          className="mt-7 px-10 py-2.5 rounded-lg text-sm font-semibold transition-colors cursor-pointer"
           style={{
             background: disabled ? "var(--btn-dis)"     : "var(--btn-primary)",
             color:      disabled ? "var(--btn-dis-txt)" : "var(--btn-text)",

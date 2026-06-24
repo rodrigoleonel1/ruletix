@@ -51,6 +51,40 @@ export default function Home() {
     setDark(document.documentElement.classList.contains("dark"));
   }, []);
 
+  // Load persisted slices (categories + colores) from localStorage
+  useEffect(() => {
+    try {
+      const stored = localStorage.getItem("ruletix-slices");
+      if (stored) {
+        const parsed = JSON.parse(stored) as unknown;
+        if (
+          Array.isArray(parsed) &&
+          parsed.every(
+            (item) =>
+              item &&
+              typeof item === "object" &&
+              typeof (item as any).id === "string" &&
+              typeof (item as any).text === "string" &&
+              typeof (item as any).color === "string"
+          )
+        ) {
+          setSlices(parsed as WheelSlice[]);
+        }
+      }
+    } catch {
+      // ignore malformed storage
+    }
+  }, []);
+
+  // Persist slices whenever the user updates categories or colors
+  useEffect(() => {
+    try {
+      localStorage.setItem("ruletix-slices", JSON.stringify(slices));
+    } catch {
+      // ignore quota / privacy errors
+    }
+  }, [slices]);
+
   const toggleDark = () => {
     const next = !dark;
     setDark(next);

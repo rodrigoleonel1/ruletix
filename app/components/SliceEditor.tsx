@@ -122,7 +122,7 @@ export default function SliceEditor({ slices, onUpdate }: SliceEditorProps) {
             onMouseLeave={(e) => (e.currentTarget.style.background = "var(--bg-main, transparent)")}
           >
             {/* Color swatch */}
-            <div className="relative flex-shrink-0">
+            <div className="relative shrink-0">
               <button
                 onClick={() => setShowColorPicker(showColorPicker === slice.id ? null : slice.id)}
                 className="w-7 h-7 rounded-md border transition-opacity hover:opacity-80"
@@ -176,7 +176,7 @@ export default function SliceEditor({ slices, onUpdate }: SliceEditorProps) {
             {/* Remove */}
             <button
               onClick={() => removeSlice(slice.id)}
-              className="flex-shrink-0 w-6 h-6 flex items-center justify-center rounded transition-colors opacity-0 group-hover:opacity-100"
+              className="shrink-0 w-6 h-6 flex items-center justify-center rounded transition-colors opacity-0 group-hover:opacity-100"
               style={{ color: "var(--text-muted)" }}
               onMouseEnter={(e) => (e.currentTarget.style.color = "#ef4444")}
               onMouseLeave={(e) => (e.currentTarget.style.color = "var(--text-muted)")}

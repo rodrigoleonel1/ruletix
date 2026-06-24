@@ -26,10 +26,10 @@ function Wheel({ slices, isSpinning, spinAngle, onSpinStart, theme }) {
             const update = {
                 "Wheel.useEffect.update": ()=>{
                     const vw = window.innerWidth;
-                    if (vw < 400) setSize(Math.min(vw - 48, 310));
-                    else if (vw < 640) setSize(340);
-                    else if (vw < 1024) setSize(420);
-                    else setSize(500);
+                    if (vw < 400) setSize(Math.min(vw - 48, 360));
+                    else if (vw < 640) setSize(440);
+                    else if (vw < 1024) setSize(560);
+                    else setSize(680);
                 }
             }["Wheel.useEffect.update"];
             update();

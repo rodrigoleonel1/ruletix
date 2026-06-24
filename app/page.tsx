@@ -176,7 +176,7 @@ export default function Home() {
       >
         {/* Sidebar header */}
         <div
-          className="flex items-center justify-between px-5 py-4 flex-shrink-0"
+          className="flex items-center justify-between px-5 py-4 shrink-0"
           style={{ borderBottom: "1px solid var(--border)" }}
         >
           <span className="font-semibold text-sm" style={{ color: "var(--text)" }}>Casillas</span>
